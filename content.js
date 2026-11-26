@@ -101,6 +101,27 @@ window.SITE = {
       teknologi: ["PHP 8", "Smarty", "Oracle", "Docker"]
     },
     {
+      id: "pmb-umaha",
+      judul: "Pendaftaran Online UMAHA",
+      subjudul: "Sistem Pendaftaran Mahasiswa Baru (PMB)",
+      kategori: "Sistem Informasi",
+      ringkas: "Calon mahasiswa daftar online, isi formulir, sampai bayar lewat Virtual Account.",
+      peran: "Anggota tim pengembang",
+      gambar: [
+        { src: "img/pmb-1-login.jpg",      ket: "Halaman login pendaftaran" },
+        { src: "img/pmb-2-registrasi.jpg", ket: "Registrasi akun calon mahasiswa" }
+      ],
+      link: "https://pendaftaran.umaha.ac.id/",
+      isi: "Website pendaftaran mahasiswa baru: calon mahasiswa membuat akun, verifikasi email, mengisi formulir pendaftaran, lalu membayar biaya formulir secara online.",
+      fitur: [
+        "Form isian pendaftaran mahasiswa baru",
+        "Pembayaran formulir lewat BNI Virtual Account",
+        "Kwitansi pembayaran dalam bentuk PDF",
+        "Penyesuaian form & aturan pendaftaran sesuai kebutuhan kampus"
+      ],
+      teknologi: ["PHP", "CodeIgniter", "Smarty", "BNI VA API"]
+    },
+    {
       id: "bfast",
       judul: "BFAST BP Batam",
       subjudul: "Aplikasi pemesanan & penyewaan fasilitas",
@@ -122,11 +143,52 @@ window.SITE = {
         "Pengelolaan pemesanan & riwayat transaksi"
       ],
       teknologi: ["Lumen", "Nuxt.js", "Vue", "Tailwind CSS", "Docker"]
+    },
+    {
+      id: "pilmapres",
+      judul: "PILMAPRES",
+      subjudul: "Pemilihan Mahasiswa Berprestasi — SIMBELMAWA Kemdiktisaintek",
+      kategori: "Sistem Informasi",
+      ringkas: "Seleksi mahasiswa berprestasi tingkat nasional, dari pendaftaran sampai penilaian juri.",
+      peran: "Anggota tim pengembang (2021–2025)",
+      gambar: [
+        { src: "img/pilmapres-1-login.jpg", ket: "Halaman login PILMAPRES" }
+      ],
+      link: "https://simbelmawa.kemdiktisaintek.go.id/pilmapres/auth/login",
+      isi: "Sistem seleksi Pemilihan Mahasiswa Berprestasi tingkat nasional di bawah SIMBELMAWA. Perguruan tinggi mendaftarkan mahasiswanya, peserta mengunggah berkas prestasi dan gagasan kreatif per tahapan, lalu reviewer menilai secara online.",
+      fitur: [
+        "Pendaftaran & verifikasi perguruan tinggi dan mahasiswa",
+        "Unggah berkas prestasi & gagasan kreatif per tahapan seleksi",
+        "Plotting reviewer, komponen penilaian & rekap skor",
+        "Sinkronisasi data perguruan tinggi, prodi & IPK mahasiswa",
+        "Notifikasi email otomatis ke peserta & verifikator"
+      ],
+      teknologi: ["PHP", "Laravel", "PostgreSQL"]
+    },
+    {
+      id: "wirausaha-merdeka",
+      judul: "Wirausaha Merdeka (WMK)",
+      subjudul: "Platform Program Wirausaha Merdeka Kemendikbudristek",
+      kategori: "Sistem Informasi",
+      ringkas: "Pendaftaran mahasiswa & perguruan tinggi untuk program kewirausahaan nasional.",
+      peran: "Pengembang sejak awal (tahun pertama program)",
+      gambar: [
+        { src: "img/wmk-1-beranda.jpg", ket: "Beranda Wirausaha Merdeka (arsip Wayback Machine, 2023)" }
+      ],
+      link: "https://wirausahamerdeka.kampusmerdeka.kemdikbud.go.id/",
+      isi: "Platform program Wirausaha Merdeka dari Kemendikbudristek (Kampus Merdeka) untuk mendukung lahirnya wirausaha mahasiswa. Mahasiswa dan perguruan tinggi pelaksana mendaftar dan mengikuti program lewat platform ini. Program sekarang sudah berakhir dan situsnya tidak aktif lagi.",
+      fitur: [
+        "Pendaftaran mahasiswa peserta program",
+        "Pendaftaran perguruan tinggi pelaksana",
+        "Informasi program, syarat & ketentuan, dan panduan",
+        "Login & dashboard peserta"
+      ],
+      teknologi: ["PHP", "Laravel", "PostgreSQL"]
     }
   ],
 
   // Teknologi yang dikuasai (tampil sebagai label kecil)
-  teknologi: ["Laravel", "Lumen", "PHP", "MySQL", "Oracle", "JavaScript", "Vue / Nuxt.js", "Tailwind CSS", "Bootstrap", "Docker", "GitHub Actions"],
+  teknologi: ["Laravel", "Lumen", "CodeIgniter", "PHP", "MySQL", "PostgreSQL", "Oracle", "JavaScript", "Vue / Nuxt.js", "Tailwind CSS", "Bootstrap", "Docker", "GitHub Actions"],
 
   // Pertanyaan umum
   faq: [
