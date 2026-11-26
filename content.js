@@ -184,11 +184,32 @@ window.SITE = {
         "Login & dashboard peserta"
       ],
       teknologi: ["PHP", "Laravel", "PostgreSQL"]
+    },
+    {
+      id: "lingkaran",
+      judul: "Lingkaran.net",
+      subjudul: "Portal Berita Media Cetak & Online",
+      kategori: "Website Berita",
+      ringkas: "Portal berita nasional & daerah dengan banyak kategori, dibangun di WordPress.",
+      peran: "Pengembang (2018): tema & custom plugin WordPress",
+      gambar: [
+        { src: "img/lingkaran-1-beranda.jpg", ket: "Beranda Lingkaran.net (arsip Wayback Machine, 2020)" }
+      ],
+      // Situs sekarang sudah berganti tampilan, jadi link diarahkan ke arsip versi lama.
+      link: "https://web.archive.org/web/20200325132535/http://lingkaran.net/",
+      isi: "Website media berita seperti portal berita online pada umumnya, dengan rubrik Nasional, Bisnis, Politik, Hukrim, Pendidikan, Sports, Techno, Peristiwa Daerah, dan Life Style. Dikerjakan tahun 2018 memakai WordPress dengan plugin buatan sendiri. Tampilan situs yang sekarang sudah berbeda dan bukan buatan saya.",
+      fitur: [
+        "Halaman utama portal berita dengan headline & berita terkini",
+        "Rubrik & sub-rubrik berita (misalnya Bisnis › Finance › Crypto)",
+        "Custom plugin WordPress sesuai kebutuhan redaksi",
+        "Pencarian berita"
+      ],
+      teknologi: ["WordPress", "PHP", "MySQL"]
     }
   ],
 
   // Teknologi yang dikuasai (tampil sebagai label kecil)
-  teknologi: ["Laravel", "Lumen", "CodeIgniter", "PHP", "MySQL", "PostgreSQL", "Oracle", "JavaScript", "Vue / Nuxt.js", "Tailwind CSS", "Bootstrap", "Docker", "GitHub Actions"],
+  teknologi: ["Laravel", "Lumen", "CodeIgniter", "WordPress", "PHP", "MySQL", "PostgreSQL", "Oracle", "JavaScript", "Vue / Nuxt.js", "Tailwind CSS", "Bootstrap", "Docker", "GitHub Actions"],
 
   // Pertanyaan umum
   faq: [
