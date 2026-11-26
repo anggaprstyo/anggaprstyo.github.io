@@ -81,12 +81,73 @@ h2{margin-top:8px;font-size:clamp(28px,4vw,40px);line-height:1.15;font-weight:80
 
 .porto{margin-top:36px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
 .pcard{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
-.thumb{aspect-ratio:16/10;background:linear-gradient(135deg,#1a2447,#2a2160);display:grid;place-items:center;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:14px}
-.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb{aspect-ratio:16/10;overflow:hidden;background:linear-gradient(135deg,#1a2447,#2a2160);display:grid;place-items:center;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:14px}
+.thumb img{width:100%;height:100%;object-fit:cover;object-position:left top}
 .pbody{padding:20px 22px 24px;display:flex;flex-direction:column;gap:6px;flex:1}
 .tag{align-self:flex-start;font-size:12px;font-weight:700;color:var(--lime);background:rgba(198,244,50,.1);padding:3px 10px;border-radius:999px}
 .pcard h3{font-size:18px;font-weight:800}
 .pcard p{color:var(--muted);font-size:15px}
+.pklien{font-size:14px!important;font-weight:600;color:var(--ink)!important;opacity:.8}
+.pfitur{list-style:none;margin-top:8px;display:grid;gap:6px;font-size:15px}
+.pfitur li{position:relative;padding-left:24px}
+.pfitur li::before{content:"✓";position:absolute;left:0;color:var(--lime);font-weight:700}
+.ptech{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.ptech span{font-family:'JetBrains Mono',monospace;font-size:12px;padding:4px 10px;border:1px solid var(--line);border-radius:8px;color:var(--muted)}
+/* satu proyek saja: tampil melebar, gambar di kiri */
+.pcard.solo{grid-column:1/-1;flex-direction:row}
+.pcard.solo .thumb{flex:0 0 42%;aspect-ratio:auto;min-height:320px}
+.pcard.solo .pbody{padding:28px 32px}
+.thumb{position:relative}
+.thumb img{transition:transform .35s}
+.pcard:hover .thumb img{transform:scale(1.03)}
+.count{position:absolute;right:10px;bottom:10px;background:rgba(11,16,32,.85);color:var(--ink);font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px}
+.pactions{margin-top:auto;padding-top:16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.pactions .plink{margin:0;padding:0}
+
+/* filter kategori & lihat semua */
+.pcard[hidden]{display:none}
+.pfilter{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px}
+.pfilter button{font:inherit;font-size:14px;font-weight:700;color:var(--muted);background:transparent;border:1.5px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer;transition:all .15s}
+.pfilter button small{font-size:12px;opacity:.7;margin-left:2px}
+.pfilter button:hover{color:var(--ink);border-color:var(--muted)}
+.pfilter button.on{background:var(--lime);border-color:var(--lime);color:var(--bg)}
+.pfilter + .porto{margin-top:20px}
+.pmore{margin-top:24px;text-align:center}
+.pmore[hidden]{display:none}
+
+/* popup detail proyek */
+.noscroll{overflow:hidden}
+.modal{position:fixed;inset:0;z-index:50;background:rgba(5,8,18,.82);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:24px;animation:fade .2s}
+.modal[hidden]{display:none}
+@keyframes fade{from{opacity:0}}
+.mbox{position:relative;width:100%;max-width:1040px;max-height:calc(100vh - 48px);overflow:auto;background:var(--card);border:1.5px solid var(--line);border-radius:24px;display:grid;grid-template-columns:1.45fr 1fr}
+.mclose{position:absolute;top:12px;right:12px;z-index:3;width:38px;height:38px;border-radius:50%;border:0;background:rgba(11,16,32,.85);color:var(--ink);font-size:24px;line-height:1;cursor:pointer}
+.mclose:hover{background:var(--lime);color:var(--bg)}
+.gallery{background:#0a0f1e;display:flex;flex-direction:column;min-width:0}
+.gallery.empty{display:grid;place-items:center;min-height:320px;color:var(--muted);font-family:'JetBrains Mono',monospace}
+.viewport{position:relative;overflow:hidden;flex:1;display:flex;align-items:center}
+.track{display:flex;width:100%;transition:transform .4s ease}
+.track figure{flex:0 0 100%;display:grid;place-items:center;padding:16px}
+.track img{max-width:100%;max-height:64vh;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.snav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:0;background:rgba(11,16,32,.85);color:var(--ink);font-size:26px;line-height:1;cursor:pointer}
+.snav:hover{background:var(--lime);color:var(--bg)}
+.prev{left:12px}.next{right:12px}
+.gfoot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 18px 16px;flex-wrap:wrap}
+.cap{color:var(--muted);font-size:13px}
+.dots{display:flex;gap:6px}
+.dots button{width:8px;height:8px;border-radius:999px;border:0;background:var(--line);cursor:pointer;padding:0;transition:width .2s}
+.dots button.on{width:22px;background:var(--lime)}
+.minfo{padding:30px 28px;display:flex;flex-direction:column;gap:8px}
+.minfo h3{font-size:22px;font-weight:800;line-height:1.25}
+.minfo p{color:var(--muted);font-size:15px}
+.minfo h4{margin-top:8px;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--lime)}
+.minfo .btn{margin-top:14px;align-self:flex-start}
+@media (max-width:860px){
+  .modal{padding:0;align-items:flex-end}
+  .mbox{grid-template-columns:1fr;max-height:92vh;border-radius:22px 22px 0 0}
+  .track img{max-height:42vh}
+  .minfo{padding:22px 20px 28px}
+}
 .plink{margin-top:auto;padding-top:10px;color:var(--lime);font-weight:700;font-size:14px}
 .tech{margin-top:32px;display:flex;flex-wrap:wrap;gap:8px}
 .tech span{font-family:'JetBrains Mono',monospace;font-size:13px;padding:6px 12px;border:1px solid var(--line);border-radius:8px;color:var(--muted)}
@@ -117,5 +178,9 @@ h2{margin-top:8px;font-size:clamp(28px,4vw,40px);line-height:1.15;font-weight:80
   .section{padding:64px 0}
   .contact{padding:32px 24px}
   .porto{grid-template-columns:1fr}
+  .pcard.solo{flex-direction:column}
+  .pcard.solo .thumb{flex:none;aspect-ratio:16/10;min-height:0}
+  .pcard.solo .pbody{padding:20px 22px 24px}
   .cards{display:flex;flex-direction:column}
 }
+.psub{margin-top:-2px;font-size:14px!important;font-weight:600;color:var(--lime)!important;opacity:.85}

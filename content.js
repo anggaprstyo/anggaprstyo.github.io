@@ -40,17 +40,93 @@ window.SITE = {
     { judul: "Rampung",         isi: "Serah terima, plus panduan pakai." }
   ],
 
-  // Portofolio. GANTI contoh di bawah dengan proyek asli Anda.
-  // gambar: taruh file di folder img/ lalu tulis "img/namafile.jpg". Kosongkan "" kalau belum ada.
-  // link: alamat website proyek, kosongkan "" kalau tidak bisa dibuka publik.
+  // Portofolio. Untuk menambah proyek, salin satu blok { ... } lalu ganti isinya.
+  // id      : nama pendek tanpa spasi, dipakai untuk link langsung (contoh: anggaprstyo.github.io/#proyek-pkd)
+  // ringkas : 1 kalimat pendek yang tampil di kartu. Detail lengkap tampil saat "Lihat detail" diklik.
+  // judul   : nama aplikasinya. subjudul: jenis aplikasinya dalam beberapa kata.
+  // gambar  : daftar screenshot di folder img/. Gambar pertama jadi sampul kartu. Kosongkan [] kalau belum ada.
+  //           { src: "img/namafile.jpg", ket: "keterangan gambar" }
+  // link    : alamat website proyek, kosongkan "" kalau tidak bisa dibuka publik.
+  // peran   : apa yang Anda kerjakan di proyek itu (kosongkan "" kalau tidak perlu).
+  // fitur   : daftar fitur utama (boleh dikosongkan: fitur: []).
+  // Urutan proyek di sini = urutan tampil. Taruh yang paling bagus di atas.
+  // Kalau proyek lebih dari angka ini, muncul filter kategori dan tombol "Lihat semua".
+  portofolioAwal: 6,
   portofolio: [
-    { judul: "Contoh: Website Profil Sekolah", kategori: "Website Profil",   gambar: "", link: "", isi: "Ganti dengan deskripsi singkat proyek Anda." },
-    { judul: "Contoh: Sistem Absensi QR Code", kategori: "Sistem Informasi", gambar: "", link: "", isi: "Ganti dengan deskripsi singkat proyek Anda." },
-    { judul: "Contoh: Katalog Toko Online",    kategori: "Toko Online",      gambar: "", link: "", isi: "Ganti dengan deskripsi singkat proyek Anda." }
+    {
+      id: "pkd",
+      judul: "E-PKD",
+      subjudul: "Sistem E-Absensi Kaderisasi PC GP Ansor Kab. Mojokerto",
+      kategori: "Sistem Informasi",
+      ringkas: "Absensi kegiatan kaderisasi pakai scan QR code, rekap kehadiran otomatis.",
+      peran: "Dikerjakan penuh: analisis, coding, sampai online",
+      gambar: [
+        { src: "img/pkd-1-login.jpg",        ket: "Halaman login" },
+        { src: "img/pkd-2-data-peserta.jpg", ket: "Data peserta: kode otomatis, import & export Excel" },
+        { src: "img/pkd-3-absensi.jpg",      ket: "Absensi per materi, manual atau scan QR" },
+        { src: "img/pkd-4-qr-peserta.jpg",   ket: "QR code tiap peserta, bisa diunduh" },
+        { src: "img/pkd-5-rekap.jpg",        ket: "Rekap kehadiran semua materi (PDF, Excel, CSV)" }
+      ],
+      link: "https://kaderisasiansormojokerto.org",
+      isi: "Aplikasi untuk mengelola peserta dan absensi kegiatan kaderisasi. Tiap peserta punya QR code, panitia cukup scan pakai kamera HP, dan rekap kehadiran per materi langsung jadi tanpa hitung manual.",
+      fitur: [
+        "Absensi scan QR code lewat kamera HP",
+        "Import & export data peserta dari Excel",
+        "Rekap kehadiran per materi (PDF, Excel, CSV)",
+        "Bisa menjalankan beberapa kegiatan sekaligus",
+        "Akses terpisah untuk admin, panitia PAC, dan peserta",
+        "Update otomatis ke hosting tiap ada perbaikan"
+      ],
+      teknologi: ["Laravel", "MySQL", "GitHub Actions"]
+    },
+    {
+      id: "langitan",
+      judul: "Sistem Langitan UMAHA",
+      subjudul: "Sistem Informasi Akademik Kampus",
+      kategori: "Sistem Informasi",
+      ringkas: "Mulai dari pendaftaran mahasiswa baru, perkuliahan, keuangan, sampai alumni.",
+      peran: "Anggota tim pengembang",
+      gambar: [
+        { src: "img/langitan-1-login.png", ket: "Halaman login Sistem Langitan" }
+      ],
+      link: "https://langitan.umaha.ac.id/",
+      isi: "Sistem akademik terpadu untuk perguruan tinggi, mulai dari pendaftaran mahasiswa baru, perkuliahan, sampai keuangan dan alumni.",
+      fitur: [
+        "Pengembangan modul mahasiswa, dosen, prodi & pendidikan",
+        "KRS & KHS dalam bentuk PDF, termasuk unduh massal",
+        "Pembayaran formulir pendaftaran & kwitansi PDF",
+        "Approval KRS oleh dosen wali",
+        "Penyesuaian fitur sesuai kebutuhan kampus"
+      ],
+      teknologi: ["PHP 8", "Smarty", "Oracle", "Docker"]
+    },
+    {
+      id: "bfast",
+      judul: "BFAST BP Batam",
+      subjudul: "Aplikasi pemesanan & penyewaan fasilitas",
+      kategori: "Aplikasi Web & API",
+      ringkas: "Gedung, rusun, asrama & wisata, lengkap dengan dashboard admin pengelola.",
+      peran: "Anggota tim pengembang: backend (API) & frontend (dashboard admin)",
+      gambar: [
+        { src: "img/bfast-1-beranda.jpg", ket: "Beranda B-FAST" },
+        { src: "img/bfast-2-layanan.jpg", ket: "Daftar layanan fasilitas" },
+        { src: "img/bfast-3-login.jpg",   ket: "Halaman login B-FAST" }
+      ],
+      link: "https://b-fast.bpbatam.go.id/",
+      isi: "Platform pemesanan dan penyewaan fasilitas seperti gedung, rusun, asrama, wisata, dan lapangan olahraga, lengkap dengan dashboard admin untuk pengelola.",
+      fitur: [
+        "Backend: API tagihan tambahan (extra bills) & pembayarannya",
+        "Backend: generate Virtual Account (VA) & konfigurasi penagihan",
+        "Frontend: tampilan tagihan tambahan & perpanjangan sewa di dashboard admin",
+        "Frontend: upload & preview dokumen, hak akses petugas penagihan",
+        "Pengelolaan pemesanan & riwayat transaksi"
+      ],
+      teknologi: ["Lumen", "Nuxt.js", "Vue", "Tailwind CSS", "Docker"]
+    }
   ],
 
   // Teknologi yang dikuasai (tampil sebagai label kecil)
-  teknologi: ["Laravel", "PHP", "MySQL", "JavaScript", "HTML & CSS", "Bootstrap", "GitHub Actions"],
+  teknologi: ["Laravel", "Lumen", "PHP", "MySQL", "Oracle", "JavaScript", "Vue / Nuxt.js", "Tailwind CSS", "Bootstrap", "Docker", "GitHub Actions"],
 
   // Pertanyaan umum
   faq: [
