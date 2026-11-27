@@ -1,4 +1,3 @@
-// Mengisi halaman dari content.js. Biasanya tidak perlu diubah.
 (function () {
   var S = window.SITE || {};
   var $ = function (sel) { return document.querySelectorAll(sel); };
@@ -19,7 +18,6 @@
   };
   var icon = function (n) { return '<svg viewBox="0 0 24 24">' + (ICONS[n] || ICONS.profil) + "</svg>"; };
 
-  // Brand: "RAMPUNGCODE" -> RAMPUNG + CODE berwarna
   var brand = S.brand || "";
   var cut = brand.toUpperCase().lastIndexOf("CODE");
   var brandHtml = cut > 0 ? esc(brand.slice(0, cut)) + "<em>" + esc(brand.slice(cut)) + "</em>" : esc(brand);
@@ -27,7 +25,6 @@
   each("[data-brand-plain]", function (el) { el.textContent = brand; });
   each("[data-tahun]", function (el) { el.textContent = new Date().getFullYear(); });
 
-  // Kontak
   var wa = "https://wa.me/" + encodeURIComponent(S.whatsapp || "") + "?text=" + encodeURIComponent(S.pesanWA || "");
   each("[data-wa]", function (el) { el.href = wa; });
   each("[data-wa-tampil]", function (el) { el.textContent = S.whatsappTampil || S.whatsapp || ""; });
@@ -38,7 +35,6 @@
     if (S.email) { el.href = "mailto:" + S.email; el.textContent = S.email; }
   });
 
-  // Hero
   var h = S.hero || {};
   each("[data-hero-judul]", function (el) { el.textContent = h.judul || ""; });
   each("[data-hero-sorot]", function (el) { el.textContent = h.judulSorot || ""; });
@@ -56,7 +52,6 @@
     return "<li><h3>" + esc(a.judul) + "</h3><p>" + esc(a.isi) + "</p></li>";
   });
 
-  // ---------- Portofolio: kartu ringkas ----------
   var PROJ = (S.portofolio || []).map(function (p, i) {
     var g = p.gambar;
     if (typeof g === "string") g = g ? [{ src: g, ket: "" }] : [];
@@ -86,8 +81,6 @@
       "</div></div></article>";
   });
 
-  // ---------- Portofolio: filter kategori + "Lihat semua" ----------
-  // Baru muncul kalau jumlah proyek lebih dari S.portofolioAwal (default 6).
   (function () {
     var grid = document.querySelector("[data-portofolio]");
     var AWAL = S.portofolioAwal || 6;
@@ -122,7 +115,15 @@
     more.className = "pmore";
     more.innerHTML = '<button type="button" class="btn btn-ghost"></button>';
     grid.parentNode.insertBefore(more, grid.nextSibling);
-    more.firstChild.addEventListener("click", function () { semua = true; render(); });
+    more.firstChild.addEventListener("click", function () {
+      var tutup = semua;
+      semua = !semua;
+      render();
+      if (tutup) {
+        var sec = document.getElementById("portofolio");
+        if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
 
     function render() {
       var shown = 0, total = 0;
@@ -138,13 +139,13 @@
         b.classList.toggle("on", on);
         b.setAttribute("aria-pressed", on);
       });
-      more.hidden = total <= shown;
-      more.firstChild.textContent = "Lihat semua portofolio (" + total + ")";
+      more.hidden = total <= AWAL;
+      more.firstChild.textContent = semua ? "Lihat lebih sedikit" : "Lihat semua portofolio (" + total + ")";
+      more.firstChild.setAttribute("aria-expanded", semua);
     }
     render();
   })();
 
-  // ---------- Portofolio: popup detail + slider ----------
   var modal = document.createElement("div");
   modal.className = "modal";
   modal.setAttribute("role", "dialog");
@@ -200,7 +201,6 @@
     if (n) n.onclick = function () { slide(idx + 1); };
     modal.querySelectorAll(".dots button").forEach(function (d, i) { d.onclick = function () { slide(i); }; });
 
-    // geser (swipe) di HP
     var vp = modal.querySelector(".viewport"), x0 = null;
     if (vp) {
       vp.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });

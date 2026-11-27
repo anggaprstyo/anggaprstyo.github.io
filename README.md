@@ -14,10 +14,28 @@ Website statis (HTML + CSS + JS), tanpa database, tanpa build. Ringan dan bisa d
 
 ## Cara mengubah isi
 
-1. Buka `content.js`, ubah teksnya, simpan.
+1. Buka `content.js`, ubah teksnya, simpan. Teks diapit tanda kutip `"..."`, tiap item dipisah koma.
 2. Buka `index.html` langsung di browser (klik dua kali) untuk melihat hasilnya.
-3. Menambah proyek portofolio: salin satu baris di bagian `portofolio`, ganti isinya.
-   Screenshot taruh di `img/`, lalu isi `gambar: "img/nama-file.jpg"`. Ukuran ideal 1200×750 (rasio 16:10).
+3. Menambah proyek portofolio: salin satu blok `{ ... }` di bagian `portofolio`, ganti isinya.
+   Urutan proyek di file = urutan tampil, jadi taruh yang paling bagus di atas.
+
+### Isian tiap proyek portofolio
+
+| Kolom | Isi |
+|---|---|
+| `id` | Nama pendek tanpa spasi, untuk link langsung, misalnya `anggaprstyo.github.io/#proyek-pkd` |
+| `judul` | Nama aplikasinya |
+| `subjudul` | Jenis aplikasinya dalam beberapa kata |
+| `kategori` | Dipakai untuk tombol filter (misalnya Sistem Informasi, Toko Online) |
+| `ringkas` | 1 kalimat pendek yang tampil di kartu |
+| `peran` | Lingkup pekerjaan, tampil sebagai "Lingkup pekerjaan:" di popup. Kosongkan `""` kalau tidak perlu |
+| `gambar` | Daftar screenshot: `{ src: "img/namafile.jpg", ket: "keterangan" }`. Gambar pertama jadi sampul. Kosongkan `[]` kalau belum ada. Ukuran ideal 1200×750 |
+| `link` | Alamat website proyek. Kosongkan `""` kalau tidak ada |
+| `isi` | Deskripsi lengkap di popup |
+| `fitur` | Daftar fitur utama |
+| `teknologi` | Daftar teknologi (label kecil) |
+
+`portofolioAwal: 6` = jumlah proyek yang tampil sebelum tombol "Lihat semua". Ikon layanan yang tersedia: `profil`, `sistem`, `toko`, `domain`, `skripsi`, `mobile`.
 
 ## Online-kan gratis dengan GitHub Pages
 

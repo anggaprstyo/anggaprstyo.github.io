@@ -1,29 +1,19 @@
-/*
- * ===========================================================
- *  ISI WEBSITE ADA DI SINI SEMUA
- *  Ubah teks di bawah, simpan, lalu push. Website ikut berubah.
- *  Aturan: teks diapit tanda kutip "...", tiap item dipisah koma.
- * ===========================================================
- */
 window.SITE = {
   brand: "RAMPUNGCODE",
   tagline: "jasa website, aplikasi & skripsi",
 
-  // Kontak
   whatsapp: "6289652895242",            // format internasional, tanpa + dan tanpa 0 di depan
   whatsappTampil: "0896-5289-5242",
   pesanWA: "Halo RampungCode, saya mau konsultasi bikin website.",
   instagram: "oytesm",                  // tanpa @
   email: "",                            // isi kalau mau ditampilkan, kosongkan kalau tidak
 
-  // Bagian atas (hero)
   hero: {
     judul: "Bikin website?",
     judulSorot: "Sekalian kami online-kan.",
     deskripsi: "Dari desain, coding, sampai domain, hosting & tayang di internet. Anda tinggal pakai."
   },
 
-  // Layanan. ikon yang tersedia: profil, sistem, toko, domain, skripsi, mobile
   layanan: [
     { ikon: "profil",  judul: "Website Profil",          isi: "Untuk usaha, sekolah, organisasi, dan komunitas. Tampil rapi di HP maupun laptop." },
     { ikon: "sistem",  judul: "Sistem Informasi",        isi: "Aplikasi admin, absensi, pendataan, dan laporan sesuai alur kerja Anda." },
@@ -32,7 +22,6 @@ window.SITE = {
     { ikon: "skripsi", judul: "Skripsi & Tugas Akhir",   isi: "Aplikasi web/sistem untuk skripsi, dibimbing sampai paham & siap sidang." }
   ],
 
-  // Alur kerja
   alur: [
     { judul: "Konsultasi",      isi: "Ceritakan kebutuhan Anda lewat WA. Gratis." },
     { judul: "Desain & Coding", isi: "Kami buatkan, Anda bisa cek progresnya." },
@@ -40,17 +29,6 @@ window.SITE = {
     { judul: "Rampung",         isi: "Serah terima, plus panduan pakai." }
   ],
 
-  // Portofolio. Untuk menambah proyek, salin satu blok { ... } lalu ganti isinya.
-  // id      : nama pendek tanpa spasi, dipakai untuk link langsung (contoh: anggaprstyo.github.io/#proyek-pkd)
-  // ringkas : 1 kalimat pendek yang tampil di kartu. Detail lengkap tampil saat "Lihat detail" diklik.
-  // judul   : nama aplikasinya. subjudul: jenis aplikasinya dalam beberapa kata.
-  // gambar  : daftar screenshot di folder img/. Gambar pertama jadi sampul kartu. Kosongkan [] kalau belum ada.
-  //           { src: "img/namafile.jpg", ket: "keterangan gambar" }
-  // link    : alamat website proyek, kosongkan "" kalau tidak bisa dibuka publik.
-  // peran   : lingkup pekerjaan di proyek itu, tampil sebagai "Lingkup pekerjaan:" (kosongkan "" kalau tidak perlu).
-  // fitur   : daftar fitur utama (boleh dikosongkan: fitur: []).
-  // Urutan proyek di sini = urutan tampil. Taruh yang paling bagus di atas.
-  // Kalau proyek lebih dari angka ini, muncul filter kategori dan tombol "Lihat semua".
   portofolioAwal: 6,
   portofolio: [
     {
@@ -348,10 +326,8 @@ window.SITE = {
     }
   ],
 
-  // Teknologi yang dikuasai (tampil sebagai label kecil)
   teknologi: ["Laravel", "Lumen", "CodeIgniter", "Yii2", "WordPress", "PHP", "MySQL", "PostgreSQL", "Oracle", "JavaScript", "Vue / Nuxt.js", "ReactJS", "React Native", "jQuery", "Python", "OpenCV", "Tailwind CSS", "Bootstrap", "Docker", "GitHub Actions"],
 
-  // Pertanyaan umum
   faq: [
     { tanya: "Berapa lama pengerjaannya?", jawab: "Tergantung jumlah halaman dan fitur. Perkiraan waktunya kami sampaikan saat konsultasi." },
     { tanya: "Apakah sudah termasuk domain & hosting?", jawab: "Bisa. Kami bantu pilih dan urus sampai website online." },

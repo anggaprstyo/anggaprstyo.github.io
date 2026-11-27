@@ -11,7 +11,6 @@ img{max-width:100%;display:block}
 .container{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
 .narrow{max-width:760px}
 
-/* nav */
 .nav{position:sticky;top:0;z-index:10;background:rgba(11,16,32,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .nav-in{display:flex;align-items:center;gap:24px;height:68px}
 .brand{display:flex;align-items:center;gap:10px}
@@ -21,14 +20,12 @@ img{max-width:100%;display:block}
 .links{display:flex;gap:24px;margin-left:auto;color:var(--muted);font-weight:600;font-size:15px}
 .links a:hover{color:var(--ink)}
 
-/* buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--lime);color:var(--bg);font-weight:700;padding:14px 24px;border-radius:999px;transition:transform .15s,box-shadow .15s;cursor:pointer}
 .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(198,244,50,.25)}
 .btn-sm{padding:9px 18px;font-size:14px}
 .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
 .btn-ghost:hover{border-color:var(--lime);box-shadow:none}
 
-/* hero */
 .hero{position:relative;overflow:hidden;padding:80px 0 96px}
 .glow{position:absolute;border-radius:50%;filter:blur(110px);opacity:.5;pointer-events:none}
 .g1{width:520px;height:520px;background:var(--violet);top:-200px;right:-160px}
@@ -55,7 +52,6 @@ h1{margin-top:22px;font-size:clamp(40px,6.2vw,68px);line-height:1.05;font-weight
 .prog div{height:100%;width:0;background:linear-gradient(90deg,var(--violet),var(--lime));animation:fill 1.6s .3s ease-out forwards}
 @keyframes fill{to{width:100%}}
 
-/* sections */
 .section{padding:88px 0;scroll-margin-top:68px}
 .alt{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .eyebrow{color:var(--lime);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase}
@@ -63,7 +59,6 @@ h2{margin-top:8px;font-size:clamp(28px,4vw,40px);line-height:1.15;font-weight:80
 
 .cards{margin-top:36px;display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
 .cards .card{grid-column:span 2}
-/* 5 layanan: 3 di atas, 2 lebar di bawah. Kalau jumlahnya beda, tetap rapi karena sisanya melebar. */
 .cards .card:nth-last-child(2):nth-child(3n+1),.cards .card:last-child:nth-child(3n+2){grid-column:span 3}
 .cards .card:last-child:nth-child(3n+1){grid-column:span 6}
 .card{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:26px;transition:border-color .2s,transform .2s}
@@ -93,7 +88,6 @@ h2{margin-top:8px;font-size:clamp(28px,4vw,40px);line-height:1.15;font-weight:80
 .pfitur li::before{content:"✓";position:absolute;left:0;color:var(--lime);font-weight:700}
 .ptech{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .ptech span{font-family:'JetBrains Mono',monospace;font-size:12px;padding:4px 10px;border:1px solid var(--line);border-radius:8px;color:var(--muted)}
-/* satu proyek saja: tampil melebar, gambar di kiri */
 .pcard.solo{grid-column:1/-1;flex-direction:row}
 .pcard.solo .thumb{flex:0 0 42%;aspect-ratio:auto;min-height:320px}
 .pcard.solo .pbody{padding:28px 32px}
@@ -104,7 +98,6 @@ h2{margin-top:8px;font-size:clamp(28px,4vw,40px);line-height:1.15;font-weight:80
 .pactions{margin-top:auto;padding-top:16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .pactions .plink{margin:0;padding:0}
 
-/* filter kategori & lihat semua */
 .pcard[hidden]{display:none}
 .pfilter{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px}
 .pfilter button{font:inherit;font-size:14px;font-weight:700;color:var(--muted);background:transparent;border:1.5px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer;transition:all .15s}
@@ -115,7 +108,6 @@ h2{margin-top:8px;font-size:clamp(28px,4vw,40px);line-height:1.15;font-weight:80
 .pmore{margin-top:24px;text-align:center}
 .pmore[hidden]{display:none}
 
-/* popup detail proyek */
 .noscroll{overflow:hidden}
 .modal{position:fixed;inset:0;z-index:50;background:rgba(5,8,18,.82);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:24px;animation:fade .2s}
 .modal[hidden]{display:none}
