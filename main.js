@@ -186,7 +186,7 @@
       (cur.kategori ? '<span class="tag">' + esc(cur.kategori) + "</span>" : "") +
       "<h3>" + esc(cur.judul) + "</h3>" +
       (cur.subjudul ? '<p class="psub">' + esc(cur.subjudul) + "</p>" : "") +
-      (cur.peran ? '<p class="pklien">Peran: ' + esc(cur.peran) + "</p>" : "") +
+      (cur.peran ? '<p class="pklien">Lingkup pekerjaan: ' + esc(cur.peran) + "</p>" : "") +
       "<p>" + esc(cur.isi) + "</p>" + fitur + chips(cur.teknologi) +
       (cur.link ? '<a class="btn" href="' + esc(cur.link) + '" target="_blank" rel="noopener">Kunjungi website ↗</a>' : "") +
       "</div></div>";
