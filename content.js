@@ -101,6 +101,26 @@ window.SITE = {
       teknologi: ["PHP 8", "Smarty", "Oracle", "Docker"]
     },
     {
+      id: "langitan-unu",
+      judul: "Sistem Langitan UNU Lampung",
+      subjudul: "Sistem Informasi Akademik Kampus",
+      kategori: "Sistem Informasi",
+      ringkas: "Sistem akademik Universitas Nahdlatul Ulama Lampung, dari PMB sampai nilai.",
+      peran: "Pengembangan & penyesuaian sistem (tim)",
+      gambar: [
+        { src: "img/langitan-unu-1-login.jpg", ket: "Halaman login Sistem Langitan UNU Lampung" }
+      ],
+      link: "https://langitan.unulampung.ac.id/",
+      isi: "Sistem informasi akademik untuk Universitas Nahdlatul Ulama Lampung, dikembangkan dan disesuaikan dengan alur akademik dan keuangan kampus.",
+      fitur: [
+        "Form isian pendaftaran mahasiswa baru (PMB)",
+        "Approval KRS oleh dosen wali dengan aturan pembayaran",
+        "Input nilai & pengelolaan KRS",
+        "Penyesuaian modul dosen & mahasiswa"
+      ],
+      teknologi: ["PHP", "Smarty", "Oracle"]
+    },
+    {
       id: "pmb-umaha",
       judul: "Pendaftaran Online UMAHA",
       subjudul: "Sistem Pendaftaran Mahasiswa Baru (PMB)",
@@ -143,6 +163,26 @@ window.SITE = {
         "Pengelolaan pemesanan & riwayat transaksi"
       ],
       teknologi: ["Lumen", "Nuxt.js", "Vue", "Tailwind CSS", "Docker"]
+    },
+    {
+      id: "iboss",
+      judul: "IBOSS Batam",
+      subjudul: "Indonesia Batam Online Single Submission — BP Batam",
+      kategori: "Sistem Informasi",
+      ringkas: "Perizinan berusaha elektronik di Batam yang terintegrasi dengan OSS Nasional.",
+      peran: "Pengembangan backend",
+      gambar: [
+        { src: "img/iboss-1-beranda.jpg", ket: "Beranda IBOSS Batam" }
+      ],
+      link: "https://iboss.go.id/",
+      isi: "Sistem aplikasi perizinan secara elektronik milik BP Batam yang terintegrasi dengan sistem Online Single Submission (OSS) Nasional, untuk wilayah Kawasan Perdagangan Bebas dan Pelabuhan Bebas (KPBPB) Batam. Melayani perizinan pendukung, izin usaha kawasan, hingga izin operasional/komersial.",
+      fitur: [
+        "Pengembangan backend sistem perizinan",
+        "Integrasi dengan OSS Nasional (OSS RBA)",
+        "Layanan perizinan pendukung & izin usaha kawasan",
+        "Pemenuhan komitmen untuk izin operasional/komersial"
+      ],
+      teknologi: []
     },
     {
       id: "pilmapres",
@@ -225,6 +265,26 @@ window.SITE = {
       teknologi: []
     },
     {
+      id: "slsgroup",
+      judul: "SLS Group",
+      subjudul: "Website PT Sentosa Laju Sejahtera — Kontraktor Tambang",
+      kategori: "Website Profil",
+      ringkas: "Website perusahaan kontraktor tambang batu bara & nikel.",
+      peran: "Pengembangan fitur backend",
+      gambar: [
+        { src: "img/slsgroup-1-beranda.jpg", ket: "Beranda SLS Group (arsip Wayback Machine, 2023)" }
+      ],
+      link: "https://slsgroup.id/",
+      isi: "Website perusahaan PT Sentosa Laju Sejahtera (SLS Group), kontraktor tambang batu bara dan nikel di Kalimantan Timur dan Sulawesi Tenggara. Berisi profil, visi misi, layanan, proyek, CSR, dan halaman kontak & karier. Kami mengerjakan pengembangan beberapa fitur tambahan di sisi backend.",
+      fitur: [
+        "Pengembangan fitur tambahan di sisi backend",
+        "Halaman profil, layanan & proyek perusahaan",
+        "Halaman CSR & lingkungan",
+        "Kontak & karier"
+      ],
+      teknologi: []
+    },
+    {
       id: "mbd",
       judul: "Sistem Informasi Mie Burung Dara",
       subjudul: "Website, Backend Web, API & Aplikasi Mobile",
@@ -265,11 +325,31 @@ window.SITE = {
         "Jual beli & sewa buku online"
       ],
       teknologi: ["ReactJS", "jQuery", "PHP", "Yii2", "REST API"]
+    },
+    {
+      id: "skripsi-tol",
+      judul: "Deteksi Kecepatan & Kepadatan Kendaraan di Jalan Tol",
+      subjudul: "Aplikasi Skripsi — Computer Vision & Fuzzy Logic",
+      kategori: "Skripsi & Tugas Akhir",
+      ringkas: "Mendeteksi kecepatan mobil dan tingkat kepadatan tol dari video CCTV.",
+      peran: "Pembuatan aplikasi skripsi mahasiswa",
+      gambar: [
+        { src: "img/skripsi-tol-1-ilustrasi.png", ket: "Ilustrasi tampilan deteksi (gambar dibuat ulang, bukan screenshot asli)" }
+      ],
+      link: "",
+      isi: "Aplikasi skripsi untuk mendeteksi kendaraan dari video jalan tol, menghitung kecepatan tiap mobil, lalu menentukan tingkat kepadatan lalu lintas menggunakan fuzzy logic. Dibuat dengan Python dan OpenCV.",
+      fitur: [
+        "Deteksi & pelacakan mobil dari video dengan OpenCV",
+        "Hitung kecepatan kendaraan dengan garis virtual",
+        "Hitung jumlah kendaraan di area pantau (ROI)",
+        "Penentuan tingkat kepadatan (lancar / ramai / padat) dengan fuzzy logic"
+      ],
+      teknologi: ["Python", "OpenCV", "Fuzzy Logic"]
     }
   ],
 
   // Teknologi yang dikuasai (tampil sebagai label kecil)
-  teknologi: ["Laravel", "Lumen", "CodeIgniter", "Yii2", "WordPress", "PHP", "MySQL", "PostgreSQL", "Oracle", "JavaScript", "Vue / Nuxt.js", "ReactJS", "React Native", "jQuery", "Tailwind CSS", "Bootstrap", "Docker", "GitHub Actions"],
+  teknologi: ["Laravel", "Lumen", "CodeIgniter", "Yii2", "WordPress", "PHP", "MySQL", "PostgreSQL", "Oracle", "JavaScript", "Vue / Nuxt.js", "ReactJS", "React Native", "jQuery", "Python", "OpenCV", "Tailwind CSS", "Bootstrap", "Docker", "GitHub Actions"],
 
   // Pertanyaan umum
   faq: [
